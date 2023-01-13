@@ -1,12 +1,14 @@
 {
   "index": "Introductie",
-  "---": {
+  "-- Technieken --": {
     "type": "separator",
     "title": "Technieken"
   },
   "3d-printen": "3D printen",
   "lasersnijden": "Lasersnijden",
-  "film-foto": {
-    "display": "hidden"
-  }
+  "-- Meta --": {
+    "type": "separator",
+    "title": "Meta"
+  },
+  "documentatie-schrijven": "Documentatie schrijven"
 }

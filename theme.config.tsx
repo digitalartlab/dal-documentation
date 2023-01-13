@@ -1,9 +1,10 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
 const config: DocsThemeConfig = {
   logo: <span>Digital Art Lab</span>,
-  docsRepositoryBase: "https://github.com/digitalartlab/dal-documentation",
+  docsRepositoryBase: "https://github.com/digitalartlab/dal-documentation/tree/main",
   footer: {
     text: "Digital Art Lab",
   },
@@ -21,7 +22,12 @@ const config: DocsThemeConfig = {
   },
   toc: {
     title: "Op deze pagina",
-  }
+  },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – Digital Art Lab'
+    }
+  },
 };
 
 export default config;
