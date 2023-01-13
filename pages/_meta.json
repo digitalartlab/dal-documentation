@@ -1,5 +1,10 @@
 {
   "index": "Introductie",
+  "website": {
+    "href": "https://digitalartlab.nl",
+    "title": "digitalartlab.nl ↗",
+    "type": "page"
+  },
   "-- Technieken --": {
     "type": "separator",
     "title": "Technieken"

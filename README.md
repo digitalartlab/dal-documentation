@@ -1,23 +1,15 @@
-# Nextra Docs Template 
+# Digital Art Lab Documentation 
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
-
-[**Live Demo →**](https://nextra-docs-template.vercel.app)
-
-[![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)
-
-## Quick Start
-
-Click the button to clone this repository and deploy it on Vercel:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
+This is the Digital Art Lab docs, built with [Nextra](https://nextra.site).
 
 ## Local Development
 
-First, run `pnpm i` to install the dependencies.
+First, run `npm install` to install the dependencies.
 
-Then, run `pnpm dev` to start the development server and visit localhost:3000.
+Then, run `npm run dev` to start the development server and visit `localhost:3000`.
 
-## License
+## Copyright and License
 
-This project is licensed under the MIT License.
+The content of our documentation is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). This includes all the data in the `/pages` and `/public` directories.
+
+The underlying source code used to format and display that content is licensed under the Mozilla Public License 2.0. If you fork this repo, you must also release your fork under MPL-2.0.
