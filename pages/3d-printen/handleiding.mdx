@@ -1,0 +1,76 @@
+import { Callout } from "nextra-theme-docs";
+
+# Handleiding Felix 3D printer
+
+## Voordat je begint
+
+Om te printen heb je een 3D model nodig. Dit kan je zelf maken of downloaden van het internet. Zorg dat je je 3D ontwerp opslaat als `.stl`bestand.
+
+## Voorbereiden
+
+Om te printen, moet je 3D model worden omgezet naar een `.gcode` bestand. Dit is een bestand dat de printer begrijpt. Dit heet slicen. Dit kan je doen met de software Prusa. Deze staat geïnstalleerd op de laptop Sappho.
+
+Open je `.stl` bestand via: **Bestand > Importeer > STL bestand**.
+
+Je ontwerp verschijnt nu op het virtuele printbed. Zorg dat je ontwerp zo vlak mogelijk op het printbed ligt. Dit kan je doen door het ontwerp te draaien en/of te schalen.
+
+### Supports toevoegen (optioneel)
+
+Een 3D printer werkt van beneden naar boven. In de lucht printen gaat dus niet. Bij een grote overhang van 45 graden moeten je supports toevoegen. Dit is een soort van brug die de printer maakt om het ontwerp te kunnen printen. Na het printen kan je de supports er makkelijk afhalen.
+
+Genereer supports: **Printinstellingen > Support > Genereer support**
+
+### Slicen
+
+1. Selecteer de gewenste printsettings. We hebben een aantal instellingen voorbereid die goed werken op de Felix 3D printer. Deze instellingen heten `Felix` en `Felix_HighDetail`.
+
+2. Druk op **Slice**. De software gaat rekenen. Dit kan even duren
+
+3. Geef je bestand een logische naam en sla deze op als `.gcode` op
+
+4. Zet je `.gcode` op een SD-kaart
+
+Tijd om naar de printer te gaan!
+
+## Printen
+
+De Felix 3D printer wordt bediend met het display onderin. Het is een draai-drukknop waarmee je door het menu heen scrolt en je keuze selecteert als je erop drukt. Aan de zijkant van het display zit een opening voor de SD-kaart en de aan/uit knop.
+
+### Opstarten
+1.  Maak het printbed schoon met een zacht papiertje en blauwe schoonmaakalcohol
+2.  Zet de printer aan
+3. Controleer of het filament goed om de spoel zit. Ga niet printen als er een 
+
+### Printen
+
+1.  Stop de SD-card in het daarvoor bestemde slot
+
+2.  De printer start met het *Info* display op het scherm. Druk 1 keer op de draai/drukknop om naar het *Settings*-menu te gaan
+
+3.  Draai aan de knop en selecteer **SD card > Print file**. Selecteer je eigen bestand uit de lijst
+
+4.  De printer gaat nu uit zichzelf het bed verwarmen en de printkop opwarmen. De printer start automatisch met printen zodra de ingestelde temperatuur is bereikt
+
+5.  Hou vooral de eerste paar lagen in de gaten of ze goed blijven plakken. Zo niet, druk de knop in en selecteer **Stop print**
+
+
+
+6.  De printer gaat nu printen. Dit kan minuten tot uren duren, afhankelijk van de grootte van je ontwerp. Hou er af en toe een oogje op of alles goed gaat. Hou ook het filament in de gaten of hij netjes afrolt en niet strak trekt.
+
+7.  Als de print klaar is moet je even wachten tot het printbed is afgekoeld tot minstens 30 graden. Op het display kan je de temperatuur aflezen. %%foto%%
+
+8.  haal het ontwerp voorzichtig van het heated bed af, dit doe je het beste door hem een beetje te kantelen (niet recht omhoog trekken). Gebruik een plastic spatel als het erg zit vastgeplakt.
+
+9.  Zet de printer uit als je klaar bent
+
+## Tips
+
+### De eerste laag blijft niet plakken
+- Probeer *bed leveling*. Ga in het *Settings*-menu naar **Position > Home Z**
+- Maak het heated bed nogmaals schoon met een zacht papiertje en blauwe schoonmaakalcohol
+- Probeer andere printsettings
+
+### Er komt geen filament uit de printer
+Mogelijk zit de printkop verstopt. Vraag een Labmedewerker om hulp.
+
+[Printkop verstopt](./onderhoud/printkop-verstopt)
