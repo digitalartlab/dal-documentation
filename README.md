@@ -9,7 +9,4 @@ First, run `npm install` to install the dependencies.
 Then, run `npm run dev` to start the development server and visit `localhost:3000`.
 
 ## Copyright and License
-
-The content of our documentation is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). This includes all the data in the `/pages` and `/public` directories.
-
-The underlying source code used to format and display that content is licensed under the Mozilla Public License 2.0. If you fork this repo, you must also release your fork under MPL-2.0.
+The content of this project itself is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license. The underlying source code used to format and display that content is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) or later.

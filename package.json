@@ -12,7 +12,7 @@
     "url": "git+https://github.com/digitalartlab/dal-documentation.git"
   },
   "author": "Digital Art Lab",
-  "license": "MPL-2.0",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/digitalartlab/dal-documentation/issues"
   },
