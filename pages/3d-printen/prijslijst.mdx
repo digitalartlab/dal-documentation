@@ -1,4 +1,5 @@
 import { Callout } from "nextra-theme-docs";
+import { Calculator } from "@components/calculator";
 
 # Prijslijst
 
@@ -7,17 +8,19 @@ import { Callout } from "nextra-theme-docs";
   harte welkom 😁.
 </Callout>
 
-Voor 3D printen hanteren we een prijs per meter gebruikt filament. De prijzen zijn gebaseerd op onze werkelijke materiaalkosten met een toeslag van € 0,1000 per meter. Daarmee dekken we het onderhoud van de 3D printers.
+Voor 3D printen hanteren we een prijs per meter gebruikt filament. De prijzen zijn gebaseerd op onze werkelijke materiaalkosten met een toeslag van € 0,3000 per meter. Daarmee dekken we het onderhoud van de 3D printers.
 
 Het gebruikte filament wordt automatisch uitgerekend door de slider.
 
-Voor het voorbeeld gebruiken we een print waar 5 meter filament voor nodig is. Daar kan je grofweg 4cm x 4cm x 2cm van printen. De exacte hoeveelheid filament is afhankelijk van je ontwerp en slicerinstellingen.
+Voor het voorbeeld gebruiken we een print waar 5 meter filament voor nodig is. Daar kan je een kleine print mee maken. De exacte hoeveelheid filament is afhankelijk van je ontwerp en slicerinstellingen.
+
+<Calculator />
 
 ## PLA
 
 | Materiaal | Prijs per meter (€) | Voorbeeld (5 meter) |
 | --------- | ------------------- | ------------------- |
-| PLA       | € 0,1894            | € 0,95              |
+| PLA       | € 0,3894            | € 1,95              |
 
 ## Eigen materiaal
 
@@ -30,4 +33,4 @@ Als je eigen materiaal meebrengt, rekenen we alleen de toeslag van € 0,1000 pe
 
 | Materiaal | Prijs per meter (€) | Voorbeeld (5 meter) |
 | --------- | ------------------- | ------------------- |
-| Eigen     | € 0,1000            | € 0,50              |
+| Eigen     | € 0,3000            | € 1,50              |
