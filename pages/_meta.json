@@ -11,6 +11,7 @@
   },
   "3d-printen": "3D printen",
   "lasersnijden": "Lasersnijden",
+  "vinyl-snijden": "Vinyl snijden",
   "-- Meta --": {
     "type": "separator",
     "title": "Meta"
