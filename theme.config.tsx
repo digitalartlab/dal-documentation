@@ -9,13 +9,12 @@ const Footer = () => {
   return (
     <div className="flex w-full flex-col items-center sm:items-start">
       <p className="text-xs" {...attributes}>
-        De{" "}
         <a
           property="dct:title"
           rel="cc:attributionURL"
           href="https://docs.digitalartlab.nl"
         >
-          Digital Art Lab documentatie
+          Digital Art Lab docs
         </a>{" "}
         wordt gepubliceerd door{" "}
         <a
@@ -27,7 +26,7 @@ const Footer = () => {
         </a>{" "}
         onder de{" "}
         <a
-          href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl"
           target="_blank"
           rel="license noopener noreferrer"
           style={{ display: "inline-flex", alignItems: "center" }}
@@ -55,7 +54,7 @@ const Footer = () => {
               marginLeft: "3px",
               verticalAlign: "text-bottom",
             }}
-            src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+            src="https://mirrors.creativecommons.org/presskit/icons/nc-eu.svg?ref=chooser-v1"
           />
           <img
             style={{
