@@ -1,0 +1,112 @@
+import { Callout } from "nextra-theme-docs";
+
+# Stappenplan CNC frees 3018 Pro
+
+## Safety first
+
+- Het is een kleine goedkope CNC. Gebruik simpele materialen
+- Pas op dat je niet het aluminiumbed freest. Leg er altijd een laagje hout of vergelijkbaar tussen
+- De frees draai snel. Zet wat je wil bewerken goed vast!
+- Pas op je vingers 😉
+
+## Opstarten
+
+1. Plug de CNC in power en USB
+
+2. Open `ugsplatform` (Universal G-Code Sender)
+
+3. Kies bij firmware `GRBL`
+
+4. Klik bij Port op de refresh knop
+
+5. Kies bij Port `COM4`
+
+<Callout>
+  Af en toe gebruikt de CNC opeens een andere poort. Er zit dan niets anders op
+  dan de verschillende COM-poorten één voor één uit te proberen.
+</Callout>
+
+6. Kies bij Baud `115200`
+
+7. Klik op het stopcontact knopje om verbinding met de machine te starten
+
+![](/assets/cnc-frezen/20220706113217.png)
+
+8. Kies snelheden en bewegingsafstanden voor handmatige input
+
+   - Step size `XY`: aantal mm dat het bed of de kop verplaats als je op de pijltjes klikt
+   - Step size `Z`: aantal mm dat de kop omhoog/omlaag gaat bij klikken op **Z-** en **Z+**
+   - Feed rate: snelheid van beweging (`120` werkt best goed, maar het maakt niet erg veel uit)
+
+![](/assets/cnc-frezen/20220706113248.png)
+
+## Materiaal plaatsen
+
+1. Klik op **Home machine** en vervolgens op **Reset zero**
+
+2. Als er genoeg ruimte is kan je er een tool in zetten (bijvoorbeeld een "V" tip cutter)
+   als er niet genoeg ruimte is kan je de kop verplaatsen met de "Jog Controller" buttons
+
+3. Zet de tool goed vast met de 2 moersluitels
+
+4. Verplaats X/Y tot je op de **linker onderhoek** zit van waar je wil beginnen
+
+5. Klik op **Reset Zero**
+
+![](/assets/cnc-frezen/20220706112246.png)
+
+6. Controleer of de tool inderdaad goed vast zit
+
+<Callout>
+Zet je material goed vast. Gebruik de klemmen die bij de frees liggen. Hoe beter het materiaal geklemd zit, hoe mooier je resultaat
+</Callout>
+
+7. Gebruik de macro button **Start Spindle 500 RPM** om de frees te starten
+
+![](/assets/cnc-frezen/stap-15.png)
+
+<Callout type="warning">
+  Ga alleen door als het boortje echt draait. Anders kan je de machine
+  beschadigen
+</Callout>
+
+8. Ga nu langzaam (dus met een kleine Z step) omlaag met **Z-** tot je op de diepte zit die je wil gebruiken om de PCB netjes uit te graferen
+
+9. Om ook de **Z** start locatie vast te zetten klik je nog een keer op **Reset Zero**
+
+10. Stop de Frees met de Macro button **Stop Spindle**
+
+
+Je hebt nu de startspositie van de machine vastgezet en je materiaal geplaatst. Je bent klaar om te gaan frezen.
+
+## Frezen
+
+1. Klik op de **Open** knop en open je `.nc`-bestand
+
+2. Nu zie je in de visualizer de outlines van je ontwerp
+
+![](/assets/cnc-frezen/20220706112746.png)
+
+3. Klik op **Play**
+
+![](/assets/cnc-frezen/20220706112800.png)
+
+4. De machine verplaatst een beetje en stopt dan, klik nogmaals op **Play**
+
+5. Houd de machine goed in de gaten en druk snel op **Stop** of trek de stekker er uit als het mis lijkt te gaan
+
+Wacht tot de machine klaar is.
+
+## Afronden
+
+Zodra de machines klaar is met frezen, kan je je werk verwijderen en de machine afsluiten.
+
+1. Verplaats de kop zodat deze niet boven de PCB zit met de knoppen in **Jog Controller**
+
+2. Haal je werk los van de klemmen
+
+3. Maak de machine schoon als het nodig is
+
+4. Trek de stekker uit het stopcontact
+
+Je bent nu klaar met frezen. Goed gedaan!
