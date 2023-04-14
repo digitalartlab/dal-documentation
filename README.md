@@ -14,6 +14,6 @@ Finally, run `npm run dev` to start the development server and visit `localhost:
 
 ## Copyright and License
 
-The content of our documentation is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). This includes all the data in the `/pages` and `/public` directories.
+The content of our documentation is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-The underlying source code used to format and display that content is licensed under the Mozilla Public License 2.0. If you fork this repo, you must also release your fork under MPL-2.0.
+The underlying source code used to format and display that content is licensed under the GNU General Public License v3.0. If you fork this repo, you must also release your fork under GNU GPL v3.0.
