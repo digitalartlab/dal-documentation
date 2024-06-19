@@ -13,6 +13,7 @@
   "cnc-frezen": "CNC frezen",
   "lasersnijden": "Lasersnijden",
   "vinyl-snijden": "Vinyl snijden",
+  "hot-press": "Hot press",
   "-- Meta --": {
     "type": "separator",
     "title": "Meta"
