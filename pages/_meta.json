@@ -10,12 +10,12 @@
     "title": "Technieken"
   },
   "3d-printen": "3D printen",
+  "3d-scanner": "3D scanner",
   "cnc-frezen": "CNC frezen",
+  "hot-press": "Hot press",
   "lasersnijden": "Lasersnijden",
   "vinyl-snijden": "Vinyl snijden",
-  "hot-press": "Hot press",
   "vr-bril": "Vr bril",
-  "3d-scanner": "3D scanner",
   "-- Meta --": {
     "type": "separator",
     "title": "Meta"
