@@ -1,179 +1,62 @@
 import { Callout } from "nextra-theme-docs";
 import { Card, Cards } from "@components/card";
 
-# Stappenplan hot press
+# Stappenplan 3D scanner
+
+## Voorbereiding
+1. Zorg dat je toegang hebt tot een windows computer met Agisoft Metashape (Margaret en ...).
+2. De scanner heeft genoeg ruimte nodig om rond te draaien. Verplaats als nodig de scanner. Til deze op bij de poten, niet beetpakken bij de draaischijf of scan-arm.
+![De scanner](public/assets/3d-scanner/3dScanner-1.jpg)
+3. De scan-arm is geborgd aan een van de poten. Haal de borgdraad los voor gebruik.
+![Borgdraad](public/assets/3d-scanner/3dScanner-2.jpg)
+4. Controleer nogmaals of de scan-arm ruimte heeft om rond te draaien vóórdat je deze aansluit op stroom.
+5. Zet de 3D scanner aan door de stekker in het stopcontact te steken. Let op: scanner begint meteen rond te draaien om te kalibreren om zijn nulpunt te bepalen. Hou de arm goed in de gaten wanneer hij kalibreert en wanneer je start met scannen. Als de arm probeert te draaien maar vast lijkt te zitten, geef hem dan een duwtje zodat hij verder draait.
 
 
-## Voordat je begint
+## Scannen
+Als de scan-arm zijn rondje (en terug) gemaakt heeft, en de led-lampjes op de camera boxjes blauw zijn is alles gereed voor het scannen.
+1. Plaats het te scannen object op het midden van de schijf.
+2. Richt de camera's ongeveer naar het centrum van het object, in ieder geval zo dat de foto’s elkaar goed overlappen.
+![Open traceer venster](public/assets/3d-scanner/3dScanner-3.jpg)
+3. Start met scannen door op het touchscreen van de Raspberry Pi op de rode knop “scannen” te drukken. De scan-arm maakt stapjes van 15 graden en maakt op elke positie een foto. 
+![Open traceer venster](public/assets/3d-scanner/3dScanner-4.jpg)
+4. In totaal worden er per scan 75 foto’s gemaakt. Elke foto krijgt de naam van de camera (C31, C32, C33, enz.) met daarachter de datum en tijdcode (maand, dag, uur, minuut, seconde)
+5. Als de scanner klaar is draait hij terug naar het nulpunt en kan je naar de computer gaan om de beelden binnen te halen.
 
-Wat wil je bedrukken, welke kleur(en) heeft het ontwerp.
 
-## Ontwerp maken
+## Foto’s op computer zetten
+1. Verbind met het Wifi netwerk van de scanner. 
+    - Netwerk naam: 3DScanner-MSD
+    - Wachtwoord: 12345678
+2. Open de applicatie FileZilla. Maak verbinding met de scanner door bovenaan de volgende gegevens in te voeren.
+    - Host: 192.168.16.20
+	- Gebruikersnaam: camera
+	- Wachtwoord: msd
+![Open traceer venster](public/assets/3d-scanner/3dScanner-6.jpg)
+3. Navigeer in het rechter venster naar /home/camera/FTP/files. Selecteer de foto’s en sleep ze naar het linker venster naar de gewenste map op de computer (vaak binnen Margaret Hamilton)
+4. Nadat de foto’s gekopieerd zijn is het raadzaam om ze te verwijderen van de scanner. Dit doe je door ze in het rechter venster te verwijderen.
 
-Er zijn een aantal mogelijkheden voor het maken van ontwerp
-
-Bij tekst is het handig om vinyl stickers te maken, ook voor ontwerpen met één kleur is dat de makkelijkste en mooiste oplossing.
-
-Bij meerdere kleuren is het ook mogelijk, maar zal het samenvoegen van de vormen wel wat extra werk zijn.
-
-Je kan ook transferpapier gebruiken, let op dat er twee soorten zijn, licht en donker.
-
-- Donker is de enige die werkt op zwart en andere donkere ondergronden, dat komt door de extra witte laag die deze behoud. Daarnaast is het ook te gebruiken op lichte ondergronden.
-- Licht is transparant en werkt het beste op witte ondergronden, op andere lichte tinten krijg je wel wat verkleuring. Op licht papier moet je wel gespiegeld printen.
-
-<Cards>
-	<Card
-		icon="✂️"
-		title="Vinyl sticker maken"
-		href="/vinyl-snijden/stappenplan"
-		arrow={true}
-	/>
-	<Card
-		icon="🖨️"
-		title="Printen"
-		href="/hot-press/extra/printen"
-		arrow={true}
-	/>
-</Cards>
-
-## Hot press klaarzetten
-
-### Opzetstuk
-
-Afhankelijk waar je wat op wil drukken moeten er andere opzetstukken op de pers gezet worden. Er zijn 4 soorten stukjes voor de pers.
-
-De pers zal meestal met de grote plaat klaar staan.
-
-Grote plaat
-
-- T-shirts
-- Tegeltje
-
-Set kleine plak
-
-- T-shirts (kleine sticker)
-- Borden
-- Tegeltje
-
-Kromme plaat
-
-- Pet
-
-Cilindervormige plaat
-
-- Mokken
-
-Je kan de volgende instructies omgedraaid volgen om een opzetstuk te verwijderen en normaal om het stuk wat jij wilt er weer op te zetten.
-
-<Cards>
-	<Card
-		icon="👕"
-		title="Grote plaat"
-		href="/hot-press/extra/grote-plaat"
-		arrow={true}
-	/>
-	<Card
-		icon="🍽️"
-		title="Kleine plak"
-		href="/hot-press/extra/kleine-plak"
-		arrow={true}
-	/>
-	<Card
-		icon="🧢"
-		title="Kromme plaat"
-		href="/hot-press/extra/kromme-plaat"
-		arrow={true}
-	/>
-	<Card
-		icon="☕️"
-		title="Cilindervormige plaat"
-		href="/hot-press/extra/cilindervormige-plaat"
-		arrow={true}
-	/>
-</Cards>
-
-### Druk uittesten
-
-Controleer de druk bij het klemmen (niet te strak en niet te los). De schroeven met veren zouden er uit mogen zien als de foto hieronder. Ongeveer een halve centimeter
-
-![DSC01310.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/F94BBB9D-0FDF-4843-A458-032601E1E0E1_2/nxomHwGe9gkigGFrsxwtoQSmBfdP6G1xHx7XGckBfKEz/DSC01310.jpeg)
-
-## Temperatuur en timer instellen
-
-Haal de druk van de pers (open stand).
-
-Sluit de stroomkabel aan, en haal daarna de schakelaar over naar de aan positie.
-
-![IMG_1942.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/595DEBDD-22B6-49F6-BE20-A13DC280B174_2/uMCy9Ycf6Ex8IyryiUBifaxSO61TXYTqNQnpnc6ExEoz/IMG_1942.jpeg)
-
-Links naast TEMP staat de huidige temperatuur van de plaat. En naast TIME staan de secondes op de timer weergegeven.
-
-![IMG_1945 2.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/001FB3DB-1A8A-4795-9EDE-390272CD5858_2/gjF5F5x0wtFe1GSEFufk40YA2LG8GPY01RlyP8snxsUz/IMG_1945%202.jpeg)
-
-Druk op SET en de instellingen van de vorige druk komen nu op het scherm te staan.
-
-Eerst pas je de ingestelde temperatuur aan met de driehoek omhoog en omlaag, daarna druk je op SET en kun je de timer instellen met de driehoekjes. Door nog een laatste keer op SET te drukken is het opgeslagen, en kun je daar zo mee gaan drukken.
-
-| **Materiaal** | **Overdracht**          | **Temperatuur (ºC)** | **Duur (seconden)** |
-| ------------- | ----------------------- | -------------------- | ------------------- |
-| T-shirt       | Overdracht print papier | 160                  | 20 tot 30           |
-| T-shirt       | Vinyl folie papier      | 160                  | 10 tot 20           |
-| *Mokken**     |                         | 160                  | 30                  |
-| *Borden**     |                         | 160                  | 40                  |
-| *Tegeltjes**  |                         | 160                  | 30                  |
-| *Pet**        |                         | 160                  |                     |
-
-**Waardes uit product handleiding, nog niet getest/geen ervaring mee.*
-
-Als de plaat op temperatuur is kun je door gaan met de druk.
-
-Als de temperatuur bereikt is kun je verder met de volende stap.
-
-<Callout type="warning">
-	De hot press is heet!
+<Callout type="info">
+	Let erop dat je maar 75 foto’s maakt per scan. Als er bijvoorbeeld 150 foto’s zijn heb je ook de niet verwijderde foto’s van een eerder project. Kies alleen de laatste 75.
 </Callout>
 
-## Drukken
 
-Schuif de rubberen mat uit de hitte pers.
+## Scanner uitzetten
+1. Druk `windowstoets` + `R`. Je krijgt een pop-up window UITVOEREN. Bij het veld Openen type je “cmd”. Er opent een zwart command scherm
+2. Typ `ssh camera@192.168.16.20` druk ENTER en voer “msd” in als wachtwoord
+![Open traceer venster](public/assets/3d-scanner/3dScanner-5.jpg)
+3. Typ `sudo shutdown` en druk enter. Voer nogmaals het wachtwoord in + enter. Na één minuut schakelt de scanner uit. De arm gaat weer draaien dus hou in de gaten dat de omgeving nog steeds vrij is.
+5. Wanneer de scanner is uitgeschakeld kan je hem uit het stopcontact halen en FileZilla en het command scherm afsluiten.
+6. Bind de scan-arm weer vast aan een van de poten met een borgdraad en zet de scanner terug wanneer je klaar bent.
 
-leg je materiaal op de mat.
 
-![IMG_1943.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/6C3AD056-6282-4BEA-8A3B-055C765CFA80_2/nc9NnqQci3gWDvYTbYjlLH1Y3sxcF3YzIYpPSZHpOnEz/IMG_1943.jpeg)
-
-Plaats het materiaal op de mat en schuif de rubberen mat nu met materiaal weer onder de pers.
-
-Haal de hendel over en zet er kort druk op het t-shirt, hierdoor wordt het t-shirt glad gestreken. En zet de klem/pers weer open.
-
-Schuif de mat weer uit de pers.
-
-Leg het ontwerp op de gewenste plaats.
-
-- Vinyl sticker: de glimmende kant boven.
-- Donker transfer papier: verwijder (rode) hokjes kant, en hou de geprinte kant boven.
-- Licht transfer papier: de geprinte kant onder en de (blauwe) hokjes kant boven.
-
-![IMG_1944.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/73268BB5-5F84-4F25-B5E7-7109BE3F454A_2/v8WtYaq6p3xGxkIad9UjpF2KKgioZ3G9yyF9ohUUWQUz/IMG_1944.jpeg)
-
-Schuif de mat weer onder de pers.
-
-Druk op de driehoek omlaag om de timer te starten.
-
-![IMG_1946.jpeg](https://res.craft.do/user/full/68792d59-b68d-653a-bd75-1a10fe088263/doc/8C18CB0B-28A3-460A-AC54-D0E94C663509/B7C341E0-9CC9-438F-9CA3-0E810E77D2D1_2/aqwNBe11byCZTeU9pmXlMTH1gxsUVdixmqG6BYwZg38z/IMG_1946.jpeg)
-
-Haal de hendel over en zet de druk er op voor de aangeraden tijd.
-
-Druk nogmaals op de driehoek omlaag om de timer te stoppen.
-
-Zet de klem/pers weer open.
-
-Schuif de mat uit de pers.
-
-Laat het minimaal 1 minuut afkoelen.
-
-Bij vinyl stickers en licht transfer papier: Verwijder de sticker transfer langzaam van het t-shirt.
-
-## Afsluiten en opruimen
-
-Zet de schakelaar uit en haal de stekker uit het stopcontact.
+## Processen van de fotoset in Agisoft Metashape
+<Cards>
+	<Card
+		icon="🔧"
+		title="3D scan bewerken"
+		href="/3d-scanner/extra/scan-bewerken"
+		arrow={true}
+	/>
+</Cards>
 

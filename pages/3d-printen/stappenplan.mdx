@@ -1,76 +1,108 @@
 import { Callout } from "nextra-theme-docs";
+import { Card, Cards } from "@components/card";
 
 # Stappenplan Felix 3D printer
 
-## Voordat je begint
-
-Om te printen heb je een 3D model nodig. Dit kan je zelf maken of downloaden van het internet. Zorg dat je je 3D ontwerp opslaat als `.stl` bestand.
-
-## Voorbereiden
-
-Om te printen, moet je 3D model worden omgezet naar een `.gcode` bestand. Dit is een bestand dat de printer begrijpt. Dit heet slicen. Dit kan je doen met de software Prusa. Deze staat geïnstalleerd op de laptop Sappho.
-
-Open je `.stl` bestand via: **Bestand > Importeer > STL bestand**.
-
-Je ontwerp verschijnt nu op het virtuele printbed. Zorg dat je ontwerp zo vlak mogelijk op het printbed ligt. Dit kan je doen door het ontwerp te draaien en/of te schalen.
-
-### Supports toevoegen (optioneel)
-
-Een 3D printer werkt van beneden naar boven. In de lucht printen gaat dus niet. Bij een grote overhang van 45 graden moeten je supports toevoegen. Dit is een soort van brug die de printer maakt om het ontwerp te kunnen printen. Na het printen kan je de supports er makkelijk afhalen.
-
-Genereer supports: **Printinstellingen > Support > Genereer support**
-
-### Slicen
-
-1. Selecteer de gewenste printsettings. We hebben een aantal instellingen voorbereid die goed werken op de Felix 3D printer. Deze instellingen heten `Felix` en `Felix_HighDetail`.
-
-2. Druk op **Slice**. De software gaat rekenen. Dit kan even duren
-
-3. Geef je bestand een logische naam en sla deze op als `.gcode` op
-
-4. Zet je `.gcode` op een SD-kaart
-
-Tijd om naar de printer te gaan!
-
-## Printen
-
-De Felix 3D printer wordt bediend met het display onderin. Het is een draai-drukknop waarmee je door het menu heen scrolt en je keuze selecteert als je erop drukt. Aan de zijkant van het display zit een opening voor de SD-kaart en de aan/uit knop.
-
-### Opstarten
-1.  Maak het printbed schoon met een zacht papiertje en blauwe schoonmaakalcohol
-2.  Zet de printer aan
-3. Controleer of het filament goed om de spoel zit. Ga niet printen als er een 
-
-### Printen
-
-1.  Stop de SD-card in het daarvoor bestemde slot
-
-2.  De printer start met het *Info* display op het scherm. Druk 1 keer op de draai/drukknop om naar het *Settings*-menu te gaan
-
-3.  Draai aan de knop en selecteer **SD card > Print file**. Selecteer je eigen bestand uit de lijst
-
-4.  De printer gaat nu uit zichzelf het bed verwarmen en de printkop opwarmen. De printer start automatisch met printen zodra de ingestelde temperatuur is bereikt
-
-5.  Hou vooral de eerste paar lagen in de gaten of ze goed blijven plakken. Zo niet, druk de knop in en selecteer **Stop print**
+## Kennismaken met de printer
+Voordat we beginnen met printen is het handig om te weten waar de onderdelen van de printer zitten. Het Digital Art Lab kent twee printers. De ArtPrinter (heeft een roze sticker waar ‘Digital Art Lab’ op staat) en de Ender5 (de grotere printer met het gele schermpje).
+![De 3D printer](public/assets/3d-printen/3dPrinten-4.jpg)
+1. De printkop en nozzle: Deze zit bovenaan de printer en warmt het filament op om de 3D print te maken. Wees dus voorzichtig met deze aanraken want het kan heet zijn. Dit deel gaat heen en weer bewegen tijdens de print.
+2. Het printbed: Dit is het vlak waar de 3D print op geprint wordt. Het bed beweegt omhoog en omlaag om te bepalen op welke hoogte de nozzle gaat printen.
+3. Het filament:  Dit zit bij de ArtPrinter aan de rol rechts van de printer. Deze loopt met een draadje de nozzle in zodat het gebruikt kan worden om te printen. Aan de zijkant van de rol kan je zien welk soort filament dit is.
+4. Het printerscherm: Dit is het schermpje onderaan voor de printer. Hier laat de printer informatie zien over de huidige print, zoals de temperatuur van de nozzle en het bed. Hier kan je ook instellingen van de print aanpassen. Om het schermpje te besturen maak je gebruik van de draaiknop. 
+5. De aan- uitknop: Deze zit op het doosje onderaan achter de printer. Hiermee zet je de printer aan en uit.
 
 
+## Voorbereiden van het 3D-model
+ 
+1. Open PrusaSlicer op je computer.
+2. Importeer het 3D-model dat je wilt printen. 
+3. Pas rechtsboven de printinstellingen aan volgens je voorkeuren.
+    - Kies bij “Print Settings” hoeveel detail je wil printen. (Normaal, HoogDetail of SuperSnel)
+    - Kies bij “Filament” het type filament waar je mee gaat printen. (NinjaFlex TPU, PETG, PLA)
+    - Kies bij “Printer” de printer die je gaat gebruiken.
+        - Gebruik "ArtPrinter" voor gedetailleerd werk en "Ender5" voor snelheid.
+4. Klik rechtsonder op "Slice now".
+5. Controleer het model op eventuele fouten. Let vooral op of het model er nog uit ziet zoals je wilt, of het de juiste grootte heeft en of er nergens gaten in zitten. Pas je settings aan indien nodig door bovenaan op prinsinstellingen te klikken. Soms geeft PrusaSlicer zelf al een probleem aan.
 
-6.  De printer gaat nu printen. Dit kan minuten tot uren duren, afhankelijk van de grootte van je ontwerp. Hou er af en toe een oogje op of alles goed gaat. Hou ook het filament in de gaten of hij netjes afrolt en niet strak trekt.
+<Callout>
+    Meer weten over PrusaSlicer? Kijk [deze video](https://www.youtube.com/watch?v=_kIqMPNQNSw) of kijk op de [site van PrusaSlicer](https://help.prusa3d.com/category/prusaslicer_204) zelf.
+</Callout>
 
-7.  Als de print klaar is moet je even wachten tot het printbed is afgekoeld tot minstens 30 graden. Op het display kan je de temperatuur aflezen. %%foto%%
 
-8.  haal het ontwerp voorzichtig van het heated bed af, dit doe je het beste door hem een beetje te kantelen (niet recht omhoog trekken). Gebruik een plastic spatel als het erg zit vastgeplakt.
+## Exporteer G-code
+1. Nadat het model is gesliced en gecontroleerd, klik je op "Export G-code" in PrusaSlicer.
+2. Sla het gegenereerde G-code bestand op op je computer.
 
-9.  Zet de printer uit als je klaar bent
 
-## Tips
+## Filament verwisselen
+Zorg ervoor dat je genoeg filament hebt voor de print.  Als je niet genoeg hebt of een ander soort filament wilt gebruiken kan je deze uitwisselen.
+1. Zet de printer aan.
+2. Ga via het schermpje naar Temperature -> Nozzle en verhoog de temperatuur van de nozzle tot de aanbevolen smelttemperatuur. De smelttemperatuur verschilt per filament. Voor NinjaFlex TPU en PETG is dit ongeveer 225°C, voor PLA is dit ongeveer 195°C. Als het filament toch niet goed smelt kan je de temperatuur 10-30°C hoger zetten.
+3. Wanneer je het filament onderaan de nozzle eruit ziet komen is het filament warm genoeg om los te maken. Duw de metalen draaiknop op de printkop naar achteren en trek aan het filament sliertje om deze eruit te halen. Trek niet aan het buisje waar het filament doorheen gaat.
+![Filament verwijderen](public/assets/3d-printen/3dPrinten-3.jpg)
+4. Verwissel de filament rol met het filament dat je wilt gebruiken. Let erop dat het filament niet geknoopt raakt zoals op de foto.
+![Geknoopt filament](public/assets/3d-printen/3dPrinten-2.jpg)
+5. Pak het uiteinde van het filament en duw het door een van de gaten in het witte schijfje rechtsboven op de printer. Duw het vervolgens licht door het buisje aan de nozzle.
+![Witte schijfje](public/assets/3d-printen/3dPrinten-1.jpg)
+6. Ga terug naar het schermpje en ga naar Motion -> Move Axis -> Move Extruder -> Move 1mm. Hou het filament weer vast om te voelen of het de nozzle in gaat en draai aan de knop om de het extruder getal omhoog te zetten. Als het goed is zie je en voel je het filament verder de nozzle in gaan, als dit niet het geval is kan je het filament verder duwen en meer aan de knop draaien.
+7. Wanneer er weer filament uit de onderkant van de nozzle komt is het filament succesvol verwisselt.
+8. Zet de temperatuur van de nozzle weer omlaag.
 
-### De eerste laag blijft niet plakken
-- Probeer *bed leveling*. Ga in het *Settings*-menu naar **Position > Home Z**
-- Maak het heated bed nogmaals schoon met een zacht papiertje en blauwe schoonmaakalcohol
-- Probeer andere printsettings
+## Upload G-code naar OctoPrint
+1. Zorg er eerst voor dat het bed schoon is. Als er nog filament opzit kan je het schoonmaken met de spons en eventueel een beetje zeep. Maak het bed weer droog wanneer deze schoon is.
+2. Als je dit nog niet gedaan hebt, zet de printer aan. Zo kan deze alvast opwarmen en kan OctoPrint de printer vinden.
+3. Ga naar de OctoPrint-interface van de gewenste printer in je webbrowser.
+   - Voor "ArtPrinter": Ga naar http://artprinter.local
+   - Voor "Ender5": Ga naar http://ender5.local
+       - Vraag een LabFreak voor de username en password.
+4. Klik op "Upload" links onderaan de pagina (een beetje scrollen) en selecteer het G-code bestand dat je hebt geëxporteerd. 
+![Uploaden](public/assets/3d-printen/3dPrinten-7.jpg)
+5. Wacht tot het bestand is geüpload naar OctoPrint.
+ 
+
+## Start de print
+1. Nadat het G-code bestand is geüpload, selecteer je het in de OctoPrint-interface. Dit doe je door rechts onderaan het bestand op het map-icoontje te drukken.
+2. Kijk of de OctoPrint verbonden is met de printer. Als linksboven de printerinstellingen staan is het verbonden. Anders moet je eerst op ‘Connect’ drukken en opnieuw het bestand selecteren.
+![Connect](public/assets/3d-printen/3dPrinten-6.jpg)
+3. Controleer of de printerinstellingen overeen komen met die in PrusaSlicer.
+4. Aan het begin en tijdens de print moet je heel goed opletten dat de nozzle op de juiste hoogte zit. Lees alvast de volgende stap zodat je weet waar je op moet letten. 
+5. Als je er klaar voor bent druk dan op “Print”. Het duurt even voordat de printer gaat printen, omdat de nozzle en het bed eerst verder opgewarmd moeten worden.
+
+
+## Monitor de voortgang
+Volg de voortgang van de print via de OctoPrint-interface. Je kunt informatie bekijken zoals de geschatte tijd tot voltooiing, de temperatuur van de printer en andere belangrijke statistieken. De tijd tot voltooiing klopt niet altijd, je kunt er vanuit gaan dat het langer duurt.
+
+De eerste laag is cruciaal voor het laten slagen van de print. De hechting op het bed moet goed zijn.
+
+<Callout>
+    Let vooral bij de eerste laag goed op, je kan hier de “Babystep Z” functie gebruiken als de nozzle te ver van of te dicht bij het bed zit om goed te printen.
+</Callout>
+
+### Babystep Z instellen
+De babystep Z functie kan je pas benaderen in het display als de printer aan het printen is. Zodra hij de eerste teststreep print: Selecteer ‘Tune’ > ‘Babystep Z’. 
+- `+` vergroot de afstand tussen nozzle en bed.
+- `-` verkleint de afstand tussen nozzle en bed.
+
+Als de teststreep te smal is en de lijnen elkaar niet aanraken is de nozzle te ver weg en moet het bed omhoog. Als de lijn op het bed gedrukt lijkt en het midden van de lijn dunner lijkt dan de buitenkant van de lijn, is de nozzle te dichtbij en met het bed omlaag
+
+Zie ook [deze video](https://www.youtube.com/watch?v=C0WKA4gXG-I&t=107s).
+
+### Problemen hechting (eerste laag)
+Als de print is mislukt omdat het niet goed aan het bed bleef plakken kan je de volgende oplossingen proberen:
+- Maak het heated bed nogmaals schoon met een zacht papiertje en blauwe schoonmaakalcohol.
+- Een beetje prittstift op het bed smeren.
 
 ### Er komt geen filament uit de printer
 Mogelijk zit de printkop verstopt. Vraag een Labmedewerker om hulp.
 
-[Printkop verstopt](./onderhoud/printkop-verstopt)
+<Cards>
+  <Card
+    title="Printkop verstopt"
+    href="/3d-printen/onderhoud/printkop-verstopt"
+  />
+</Cards>
+
+## Verwijder de voltooide print
+1. Als de print is voltooid, verwijder je het object voorzichtig van het printbed. Kun je er niet goed bij? Dan kan je het bed omlaag zetten via het schermpje.
+2. Schakel de printer uit en ruim de werkruimte op.
