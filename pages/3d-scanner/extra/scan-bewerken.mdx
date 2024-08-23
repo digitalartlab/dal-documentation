@@ -1,0 +1,90 @@
+import { Callout } from "nextra-theme-docs";
+import { Card, Cards } from "@components/card";
+
+# 3D scan bewerken
+
+## Voorbereiding
+1. Zorg dat je toegang hebt tot een windows computer met Agisoft Metashape (Margaret en ...).
+2. Heb de fotos van de scan gereed.
+
+
+## Importeren van de beelden
+1. Open Agisoft Metashape.
+2. Click in de links op chunk, ga naar het menu *'Workflow'* en kies *'Add photos'*.
+![Add photos](public/assets/3d-scanner/extra/3dScanBewerken-3.png)
+3. Selecteer alle foto’s (`ctrl-a`) en kies *'Openen'*.
+
+
+## Foto’s uitlijnen
+1. Kies uit het menu Workflow – Align photos. Let niet op de settings, default is prima om te gebruiken. 
+![Align photos](public/assets/3d-scanner/extra/3dScanBewerken-4.jpg)
+<Callout type="info">
+	De melding Some photos ignored hoeft geen probleem te vormen. Maar als het veel foto’s zijn moet de scan waarschijnlijk opnieuw. 
+</Callout>
+2. Je ziet vooral heel veel stippels, niet persé een herkenbare vorm
+3. Klik op de camera rechtsboven. Je krijg nu per foto een blauw vlak.
+![Add photos](public/assets/3d-scanner/extra/3dScanBewerken-5.png)
+
+Als de vlakken, de plaatjes, niet in nette cirkels rondom het object geschaard zijn is het scannen mislukt. Waarschijnlijk moet het opnieuw, maar het is het waard om de volgende stappen te doorlopen om daar zeker van te zijn. Op de eerste foto kan je zien hoe het er ongeveer uit hoort te zien, op de tweede foto zie je dat er te weinig vlakken zijn.
+![Goed](public/assets/3d-scanner/extra/3dScanBewerken-1.jpg)
+![Fout](public/assets/3d-scanner/extra/3dScanBewerken-14.jpg)
+
+
+## De basistools
+1. In- uit zoomen doe je met het scrollwheel van de muis
+2. Het object ronddraaien doe je door te klikken-en-slepen op de bal 
+3. Als je de lijnen op de bal aanklikt ga je precies om die as, door op het grijze deel van de bal klikken en slepen krijg je meer bewegingsvrijheid.
+4. Gebruik 5 op het toetsenbord om te wisselen tussen navigeren en de laatst gebruikte optie.
+5. Om de centrum-bal te verplaatsen, kies in de toolbar onder de pyramide – *'move object'*
+
+
+## Cleanen
+1. Toets 5 om het perspectief uit het beeld te halen waardoor het makkelijker bewerken is.
+2. Kies in de toolbar bij vierkant-met-handje voor *'Rotate Region'*. Door met de lijnen op de bol te klikken en slepen kan je de doos (de region) recht zetten.  
+3. Als de doos rechts staat kies je voor *'Resize Region'*. Gebruik de sleep-iconen om de doos passend te maken om het object.
+![Region modifiers](public/assets/3d-scanner/extra/3dScanBewerken-6.png)
+4. Draai de bal een paar keer om de doos van alle kanten goed aan te passen.
+<Callout type="info">
+	In deze stappen is de `5`-toets erg handig om te wisselen!
+</Callout>
+
+
+## Bouwen
+1. Kies uit het menu *'Workflow"* – *'Build point cloud'*.
+![Build point cloud](public/assets/3d-scanner/extra/3dScanBewerken-7.png)
+<Callout type="info">
+	Als je de *zero resolution*-error krijgt zijn er te weinig punten om op te bouwen. Gebruik Resize Region om een groter vlak te maken of maak een nieuwe scan.
+</Callout>
+2. Als je naar de plaatjes kijkt zie je welke beelden meegenomen zijn in de build door kleine vierkantjes. 
+3. Klik op het *'Dense cloud'*-icoon, de 3x3 bolletjes in de toolbar om het resultaat te zien.
+![Dense cloud](public/assets/3d-scanner/extra/3dScanBewerken-8.png)
+
+
+## Schoonmaken build
+1. Gebruik de *'Freeform select'*-tool uit de toolbar om alle punten die wegkunnen te verwijderen.
+![Freeform select](public/assets/3d-scanner/extra/3dScanBewerken-9.png)
+2. Om de tool te gebruiken omcirkel je het deel dat je wilt verwijderen. Als het goed is is dit deel nu rood gekleurd. Druk daarna op de delete-toets op je toetsenbord om de puntjes te verwijderen. Herhaal dit totdat al het overtollig materiaal verwijderd is.
+![Freeform selection](public/assets/3d-scanner/extra/3dScanBewerken-2.png)
+3. Draai het beeld om ook vanuit een andere hoek schoon te maken. In principe kan je vanuit twee posities, een keer voorkant, een keer zijkant, het object geheel schoonmaken.
+4. Als je tevreden bent met de clean-up kies je uit het menu *'Workflow'* - *'Build Mesh'*. Hierdoor wordt het object gerenderd in polygons, de 3D pixels.
+![Build Mesh](public/assets/3d-scanner/extra/3dScanBewerken-10.png)
+5. Ga naar view polygons, de pyramide rechts in de toolbar, om het resultaat te zien.
+![View polygons](public/assets/3d-scanner/extra/3dScanBewerken-11.png)
+<Callout type="info">
+	Als je een deel van de eerder verwijderde pixels, bijvoorbeeld de objecten die je onder je beeld geplaatst had voor het scannen, terugziet, komt dat waarschijnlijk doordat er toch nog ergens een puntje niet verwijderd is. Het build-proces haalt dan meer info terug om er toch iets logisch van te maken. Je kunt dit weer weghalen met select tool, het is hiervoor beter om een stapje terug te gaan. Dus opnieuw cleanen.
+</Callout>
+
+
+## Texture
+Nu komt het moment om het object van kleur en beeld te voorzien.
+1. Kies uit het menu Workflow – *'Build Texture'* laad de default options, kies *'build'*.
+![Build Texture](public/assets/3d-scanner/extra/3dScanBewerken-12.png)
+2. Als het renderen klaar is kies je uit de toolbar bij de pyramide voor *'Model - Textured'*.
+![Model Texture](public/assets/3d-scanner/extra/3dScanBewerken-13.png)
+<Callout type="info">
+	Als je in de toolbar bij de pyramide *'Model confidence'* kiest kan je zien waar eventuele problemen spelen bij het renderen. Hoe meer rood een deel is in deze modus, hoe fout gevoeliger dat deel is.
+</Callout>
+
+
+## Exporteren
+Wanneer het object eruit ziet zoals je wilt, kan je het exporteren om verder aan te passen in blender of om te gebruiken voor de 3D printer.

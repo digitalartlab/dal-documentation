@@ -1,0 +1,62 @@
+import { Callout } from "nextra-theme-docs";
+import { Card, Cards } from "@components/card";
+
+# Stappenplan 3D scanner
+
+## Voorbereiding
+1. Zorg dat je toegang hebt tot een windows computer met Agisoft Metashape (Margaret en ...).
+2. De scanner heeft genoeg ruimte nodig om rond te draaien. Verplaats als nodig de scanner. Til deze op bij de poten, niet beetpakken bij de draaischijf of scan-arm.
+![De scanner](public/assets/3d-scanner/3dScanner-1.jpg)
+3. De scan-arm is geborgd aan een van de poten. Haal de borgdraad los voor gebruik.
+![Borgdraad](public/assets/3d-scanner/3dScanner-2.jpg)
+4. Controleer nogmaals of de scan-arm ruimte heeft om rond te draaien vóórdat je deze aansluit op stroom.
+5. Zet de 3D scanner aan door de stekker in het stopcontact te steken. Let op: scanner begint meteen rond te draaien om te kalibreren om zijn nulpunt te bepalen. Hou de arm goed in de gaten wanneer hij kalibreert en wanneer je start met scannen. Als de arm probeert te draaien maar vast lijkt te zitten, geef hem dan een duwtje zodat hij verder draait.
+
+
+## Scannen
+Als de scan-arm zijn rondje (en terug) gemaakt heeft, en de led-lampjes op de camera boxjes blauw zijn is alles gereed voor het scannen.
+1. Plaats het te scannen object op het midden van de schijf.
+2. Richt de camera's ongeveer naar het centrum van het object, in ieder geval zo dat de foto’s elkaar goed overlappen.
+![Open traceer venster](public/assets/3d-scanner/3dScanner-3.jpg)
+3. Start met scannen door op het touchscreen van de Raspberry Pi op de rode knop “scannen” te drukken. De scan-arm maakt stapjes van 15 graden en maakt op elke positie een foto. 
+![Open traceer venster](public/assets/3d-scanner/3dScanner-4.jpg)
+4. In totaal worden er per scan 75 foto’s gemaakt. Elke foto krijgt de naam van de camera (C31, C32, C33, enz.) met daarachter de datum en tijdcode (maand, dag, uur, minuut, seconde)
+5. Als de scanner klaar is draait hij terug naar het nulpunt en kan je naar de computer gaan om de beelden binnen te halen.
+
+
+## Foto’s op computer zetten
+1. Verbind met het Wifi netwerk van de scanner. 
+    - Netwerk naam: 3DScanner-MSD
+    - Wachtwoord: 12345678
+2. Open de applicatie FileZilla. Maak verbinding met de scanner door bovenaan de volgende gegevens in te voeren.
+    - Host: 192.168.16.20
+	- Gebruikersnaam: camera
+	- Wachtwoord: msd
+![Open traceer venster](public/assets/3d-scanner/3dScanner-6.jpg)
+3. Navigeer in het rechter venster naar /home/camera/FTP/files. Selecteer de foto’s en sleep ze naar het linker venster naar de gewenste map op de computer (vaak binnen Margaret Hamilton)
+4. Nadat de foto’s gekopieerd zijn is het raadzaam om ze te verwijderen van de scanner. Dit doe je door ze in het rechter venster te verwijderen.
+
+<Callout type="info">
+	Let erop dat je maar 75 foto’s maakt per scan. Als er bijvoorbeeld 150 foto’s zijn heb je ook de niet verwijderde foto’s van een eerder project. Kies alleen de laatste 75.
+</Callout>
+
+
+## Scanner uitzetten
+1. Druk `windowstoets` + `R`. Je krijgt een pop-up window UITVOEREN. Bij het veld Openen type je “cmd”. Er opent een zwart command scherm
+2. Typ `ssh camera@192.168.16.20` druk ENTER en voer “msd” in als wachtwoord
+![Open traceer venster](public/assets/3d-scanner/3dScanner-5.jpg)
+3. Typ `sudo shutdown` en druk enter. Voer nogmaals het wachtwoord in + enter. Na één minuut schakelt de scanner uit. De arm gaat weer draaien dus hou in de gaten dat de omgeving nog steeds vrij is.
+5. Wanneer de scanner is uitgeschakeld kan je hem uit het stopcontact halen en FileZilla en het command scherm afsluiten.
+6. Bind de scan-arm weer vast aan een van de poten met een borgdraad en zet de scanner terug wanneer je klaar bent.
+
+
+## Processen van de fotoset in Agisoft Metashape
+<Cards>
+	<Card
+		icon="🔧"
+		title="3D scan bewerken"
+		href="/3d-scanner/extra/scan-bewerken"
+		arrow={true}
+	/>
+</Cards>
+
