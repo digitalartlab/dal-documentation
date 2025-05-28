@@ -1,6 +1,22 @@
 import { Callout } from "nextra-theme-docs";
+import { Card, Cards } from "@components/card";
+
 
 # 3D printen
+
+Deze handleiding is om uit te leggen hoe je de 3D printers in het lab gebruikt, we hebben 2 printers met eigen eigenschappen om uit te kiezen. Verder gebruiken we OctoPrint om de printers te bedienen en Prusaslicer als slicer. De slicer zorgt er voor dat je model in lagen gesneden wordt zodat de 3D printer hem kan printen. Als je meer wil leren over 3D printen in het algemeen is [deze YouTube playlist](https://www.youtube.com/playlist?list=PLDJMid0lOOYnkcFhz6rfQ6Uj8x7meNJJx) een sterke aanrader.
+
+
+## Benodigdheden
+- Computer met PrusaSlicer geïnstalleerd inclusief de correcte instellingen.
+    - Als die er nog niet zijn, kijk in “Florence/lab/07 software/3D Printer” en importeer deze via de “import configuration bundle” button in PrusaSlicer
+- Toegang tot de OctoPrint-interface van "ArtPrinter" en "Ender5"
+- Vraag een labfreak voor de username en password.
+- Een printbaar 3D model (file type .STL, .3MF, .STEP .OBJ .AMF)
+- Een sponsje en wat zeep om het printbed schoon te maken.
+- Een prittstift om te helpen met de hechting van je print op het printbed.
+
+== oud ==
 
 Met de Felix 3D printer kunnen we 3D objecten printen. Je kunt zelf een 3D model ontwerpen of een model downloaden van het internet. Het model moet dan nog wel worden voorbereid voor de printer.
 
@@ -10,9 +26,9 @@ Met de Felix 3D printer kunnen we 3D objecten printen. Je kunt zelf een 3D model
 
 Wat je ook kiest: sla je ontwerp op als `.stl` bestand. Zodra je dat hebt, kan je het [stappenplan](./3d-printen/stappenplan) volgen om het te printen.
 
-## Aan de slag
+== oud ==
 
-import { Card, Cards } from "@components/card";
+## Aan de slag
 
 <Cards>
   <Card
@@ -29,6 +45,7 @@ import { Card, Cards } from "@components/card";
 </Cards>
 
 ## Onderhoud
+
 <Callout type="warning" emoji="👩‍🔧">
   Onderhoud mag alleen door Labmedewerkers worden uitgevoerd
 </Callout>
