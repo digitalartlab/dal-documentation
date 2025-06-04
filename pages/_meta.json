@@ -16,6 +16,7 @@
   "lasersnijden": "Lasersnijden",
   "vinyl-snijden": "Vinyl snijden",
   "vr-bril": "VR-bril",
+  "meta": "Meta",
   "-- Meta --": {
     "type": "separator",
     "title": "Meta"
