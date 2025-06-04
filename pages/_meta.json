@@ -16,10 +16,10 @@
   "lasersnijden": "Lasersnijden",
   "vinyl-snijden": "Vinyl snijden",
   "vr-bril": "VR-bril",
-  "meta": "Meta",
   "-- Meta --": {
     "type": "separator",
-    "title": "Meta"
+    "title": "Documentatie schrijven"
   },
-  "documentatie-schrijven": "Documentatie schrijven"
+  "documentatie-schrijven": "Documenten bewerken",
+  "markup": "Markup gebruiken"
 }
