@@ -17,9 +17,7 @@
   "vinyl-snijden": "Vinyl snijden",
   "vr-bril": "VR-bril",
   "-- Meta --": {
-    "type": "separator",
-    "title": "Meta"
+    "type": "separator"
   },
-  "metafolder": "Hoe dan",
-  "documentatie-schrijven": "Documenten bewerken"
+  "metafolder": "Meta"
 }
