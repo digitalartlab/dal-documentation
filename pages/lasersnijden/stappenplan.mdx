@@ -7,45 +7,41 @@ import Image from 'next/image'
 
 ## Voorbereiding
 
-Tesst6
 
-maak of download een ontwerp, edit waar nodig en maak wat je wil graveren in je ontwerp een andere kleur dan wat je wil snijden.
+Maak of download een ontwerp, edit waar nodig en maak wat je wil graveren in je ontwerp een andere kleur dan wat je wil snijden. 
 
-exporteer je ontwerp uit je gebruikte programma (bijvoorbeeld Illustrator, Inkscape of Fusion360) als een SVG bestand.
+Exporteer je ontwerp uit je gebruikte programma (bijvoorbeeld Illustrator, Inkscape of Fusion360) als een SVG bestand. 
+
+Pak ook de manual van de lasersnijder erbij, daarvan moet je ook een paar pagina’s lezen, deze staan verderop genoemd
 
 ## Lightburn
 
-Importeer je file
+Import je file (copy paste vanuit llustrator werkt ook) 
 
 [<img src="/assets/lasersnijder/lasersnijden-01.jpg" width="350"/>]()
 
 
-Plaats alles in het vlak op de goede plek
+Plaats alles in het vlak op de goede plek, zoals in deze afbeelding. 
+Je kan hievroor ook de software deepnest gebruiken! 
 
 ![](/assets/lasersnijder/lasersnijden-02.jpg)
 
-<Callout type="info">
-
-**let op bij graveren** dat de image en het kader om te snijden in aparte lagen zitten, zie hieronder hoe:
-
-</Callout>
-
-klik op specifieke lijnen in je ontwerp om ze in een ze in aparte laag zetten 
-
-alleen nodig als je verschillende instellingen wil gebruiken voor die geselecteerde lijnen.
+Als je delen van je ontwerp met andere settings wil bewerken moet je ze in aparte lagen zetten. Hiervoor klik je dat deel van je ontwerp aan en daarna kies je links onder een laag. 
 
 
 [<img src="/assets/lasersnijder/lasersnijden-03.jpg" width="650"/>]()
 
-Hierna zie je ze als losse “Cuts/Layers” en kan je per laag andere settings gebruiken.
+Hierna zie je ze als losse “Cuts/Layers” en kan je per laag andere settings gebruiken let ook op de volgorde, eerst graveren en dan snijden, je kan dit controleren met ALT+P en dan de slider in de preview.
 
-Zet de speed en power correct voor alle lagen, gebruik waar mogelijk settings uit de Material library.
+Zet de speed en power correct voor alle lagen, gebruik waar mogelijk settings uit de Material library. 
+
+Klik op de laag, dan het materiaal in de library, dan “assign”. 
 
 [<img src="/assets/lasersnijder/lasersnijden-04.jpg" width="450"/>]()
 
 [<img src="/assets/lasersnijder/lasersnijden-05.jpg" width="450"/>]()
 
-Als het materiaal niet in de “LAB Material Library” staat, kan je de "Thunder_Laser" material library gebruiken als uitgangspunt.
+Als het materiaal niet in de “LAB Material Library” staat, kan je de "Thunder_Laser" material library gebruiken als uitgangspunt. Sla vooral nieuwe materialen op in de Library, dat scheelt werk voor de volgende persoon. Gebruik hiervoor de knoppen “create new from layer” en vergeet niet op “save” te klikken. 
 
 <Callout type="info">
 
@@ -72,3 +68,19 @@ Klik op frame om te kijken of het inderdaad op het materiaal past
 [<img src="/assets/lasersnijder/lasersnijden-07.jpg" width="300"/>]()
 
 Volg de checklist geschreven op de machine zelf en klik op start
+
+________________________________________
+
+**Maatvoeringsafwijkingen**, nu verklaard en opgelost! 
+
+Vroeger gebeurde het dat de exacte maatvoering uit Illustrator niet goed meekwam naar Lightburn. Dat kwam door een verschil in resolutie waarop beide programma’s werken: 96 versus 72 dpi. Nu hebben we dat correct in Lightburn ingesteld: 
+
+Ga na Edit > Settings > import / export . Toggle de juiste aantal dpi aan . 
+
+**Tips!**
+- Opslaan vanuit Illustrator als .svg, zodat ook fonts goed meekomen naar Lightburn. Je kan gewoon het .svg bestand vanuit verkenner op Lightburn slepen. 
+- Bij graveren kan je simpelweg een zwart/witte of transparante .png importeren. Dan staat de setting automatisch op “image”. Als je die aanklikt dan kan je handmatig de power en speed aanpassen, op basis van bijvoorbeeld een gerelateerde bekende preset voor vlakgraveren in hetzelfde materiaal. 
+- Let op bij Line/Fill/Offset wat ie gaat doen. Je kan dit previewen > “command P” 
+- Air uitzetten bij graveren geeft mooier resultaat (zie Riemer) 
+
+ 
