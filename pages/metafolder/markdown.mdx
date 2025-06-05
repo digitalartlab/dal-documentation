@@ -1,0 +1,146 @@
+import { Callout } from "nextra-theme-docs";
+import Image from 'next/image'
+
+
+# Handleiding schrijven in Markdown
+
+De documentatie gebruikt vrijwel dezelfde markdown language als [Obsidian](https://guides.github.com/features/mastering-markdown/).
+
+<Callout type="warning">
+Lang niet alle markdown syntax wordt overgenomen door het webscript, daarom deze handleiding!
+</Callout>
+<Callout type="warning">
+Let op het gebruik van komma\'s. JSON is daar daar heel gevoelig voor.
+</Callout>
+Echt, het is bizar gevoelig.. Als je de updates na vijf minuten niet terug ziet op docs.digitalartlab.nl is er vast iets mis in de syntax!
+
+Hieronder de meest gebruikte markdown code!
+
+## Tekst
+
+```
+**bold**
+*italic*
+==highlight==
+~~doorgestreept~~
+\ gebruik deze als je geen affect wilt maar wel de *, =, ~, ' (e.a.). Bijvoorbeeld \*
+URL: [de naam van de link](https://docs.digitalartlab.nl) 
+```
+
+Een volgende regel krijg je door een regel over te slaan of door twee spaties na het laatste karakter van de regel.
+(je ziet de spaties niet, maar ze zijn er wel)  
+<Callout type="warning">
+Het webscript voor de documentatie accepteert de andere opties als \\ en \<br\> niet!
+</Callout>
+~~~
+Natuurlijk zie je spaties niet, maar probeer maar te selecteren, ze zijn er wel  
+~~~
+
+Als titels gebruiken we vooral twee headings:  
+De eerste heading is de titel bovenaan, de tweede is de ondertitel die ook terugkomt in het menu aan de rechterzijde.
+```
+# This is a heading 1 (titel)
+## This is a heading 2 (ondertitel)
+```
+
+## Plaatjes
+
+Meest gebruikt, maar stretched altijd naar de volle breedte...
+```
+![](/assets/meta/digitalartlab.jpg)
+```
+![](/assets/meta/digitalartlab.jpg)
+
+Als je wilt dat een plaatje niet over de volle breedte vertoont wordt, gebruik je de volgende syntax. 
+```
+[<img src="/assets/meta/digitalartlab.jpg" width="350"/>]()
+```
+[<img src="/assets/meta/digitalartlab.jpg" width="350"/>]()
+
+Deze syntax is eigenlijk bedoeld voor het maken van een url, als je iets invult tussen de haakjes wordt het een link. 
+```
+[<img src="/assets/meta/digitalartlab.jpg" width="350"/>](https://digitalartlab.nl)
+```
+[<img src="/assets/meta/digitalartlab.jpg" width="350"/>](https://digitalartlab.nl)
+
+## Callouts
+
+Als je waarschuwingsvlakken wilt gebruiken moet je bovenaan in je document de Callout functie oproepen! Deze beide imports staan in elk document. Zo niet moet je die dus even bovenaan copy/pasten..
+
+```
+import { Callout } from "nextra-theme-docs";
+import Image from 'next/image'
+```
+
+Warning
+~~~
+<Callout type="warning">
+**Warning Callout**
+</Callout>
+~~~
+<Callout type="warning">
+**Warning Callout**
+</Callout>
+
+Info
+~~~
+<Callout type="info">
+Info Callout
+</Callout>
+~~~
+<Callout type="info">
+Info Callout
+</Callout>
+
+Verplichting
+~~~
+<Callout type="error" emoji="🚨">
+**LET OP** serieuze waarschuwing!
+</Callout>
+~~~
+<Callout type="error" emoji="🚨">
+**LET OP** serieuze waarschuwing!
+</Callout>
+
+
+## Code block
+Erg handig als je een stukje code wilt inplakken. Gebruik drie keer de \` boven de code, en dan weer drie keer \` eronder.  
+Of juist \~\~\~ voor en na het stukje code! Bij de Callout-voorbeelden werkte \`\`\` niet, maar \~\~\~ wel. 
+Het luistert soms nauw..  
+
+~~~
+# sudo make me a sandwich
+~~~
+
+~~~
+Done this way:
+```
+# sudo make me a sandwich
+```
+~~~
+
+```
+.. or that way:
+~~~
+# sudo make me a sandwich
+~~~
+```
+Code block in a code in block (actually in a real code block)
+~~~~
+~~~
+```
+# sudo make me a sandwich
+```
+~~~
+~~~~
+
+The secret is is the amount of tilde's
+~~~~~~
+~~~~~
+~~~~
+~~~
+Tilde's secret
+~~~
+~~~~
+~~~~~
+~~~~~~ 
