@@ -1,0 +1,121 @@
+import { Callout } from "nextra-theme-docs";
+import Image from 'next/image'
+
+# Documentatie schrijven
+
+<Callout type="info">
+Het schrijven in markdown vind je in [markdown](https://docs.digitalartlab.nl/metafolder/markdown)  
+Het instellen van de gebruikers en rechten vin je in [github](https://docs.digitalartlab.nl/metafolder/github)
+</Callout>
+
+## Github \-\> docs.digitalartlab.nl
+Op de server staat een script die automatisch de github directory van **dal-documentation* scant voor wijzigingen. Dit geld voor nieuwe folders en files,
+en voor wijzigingen in de aanwezige files.  
+Je gebruikt Visual Studio Code \(zie [github](https://docs.digitalartlab.nl/metafolder/github)\) om een folder of file toe te voegen. 
+Bij een file gebruik je .mdx als extentie!
+
+In de meeste folders staat een **_meta.json** file. Daarin kan je aangeven wat je voorkeuren zijn voor de volgorde en benaming van de files in die folder.  
+Zoals bijvoorbeeld voor de listing van Meta, die vastgelegd staat in de **_meta.json** in de folder **metafolder**. 
+
+~~~
+{
+  "documentatie_schrijven": "Documentatie Schrijven",
+  "markdown": "Schrijven in markdown",
+  "github": "Github gebruiken"
+}
+~~~
+
+Per regel zie je eerst de filenaam zonder de extensie \(!\). En vervolgens de titel zoals je wilt dat die in de menulijst komt. 
+Vergeet niet een comma achter elke regel te plaatsen, behalve de laatste.  
+De file files.mdx is niet opgenomen in de meta-file, maar deze bestaat wel en wordt automatisch toegevoegd onderaan aan de lijst van deze folder.  
+
+<Callout type="info">
+Je ziet vaak alleen één regel, voor stappenplan.mdx. Dat is omdat deze boevenaan moet komen. Als je de volgorde van de andere files ook wilt
+bepalen moet je die dus opnemen in de meta-file!
+</Callout>
+
+
+## Folder Structuur
+
+De folderstructuur is erg belangrijk. 
+
+Als je ingelogd bent met [github](https://docs.digitalartlab.nl/metafolder/github) vind je 
+de folder **pages** en **public**. In *pages* vind je de directories en pagina's die automatisch uitgelezen worden. En in *pages* staan fotos en andere
+documenten die je wilt embedden in de pagina's. De folder *components* is voor plugins vooronder andere de *callout*-tags.  
+
+[<img src="/assets/meta/02-ghdocs-folders.jpg" width="500"/>]()
+
+Ook de hoofd directory van **pages** heeft eem _meta.json file. Het is de bedoeling als je een directory aanmaakt voor een nieuwe toevoeging 
+aan de handleidingen, je deze in Visual Studio Code ook toevoegd aan de main _meta.json-file!  
+
+~~~
+{
+  "index": "Introductie",
+  "website": {
+    "href": "https://digitalartlab.nl",
+    "title": "digitalartlab.nl ↗",
+    "type": "page"
+  },
+  "-- Technieken --": {
+    "type": "separator",
+    "title": "Technieken"
+  },
+  "3d-printen": "3D printen",
+  "3d-scanner": "3D scanner",
+  "cnc-frezen": "CNC frezen",
+  "hot-press": "Hot press",
+  "lasersnijden": "Lasersnijden",
+  "vinyl-snijden": "Vinyl snijden",
+  "vr-bril": "VR-bril",
+  "-- Meta --": {
+    "type": "separator"
+  },
+  "metafolder": "Meta"
+}
+~~~
+
+# De source dopwnloaden met Github
+
+Je kan de documenten online editten in de github web-omgeving, maar door de Github-app te gebruiken voorkom je dat 
+je per wijzigingen eerst verificatie moet vragen aan een andere gebruiker met de juiste rechten.  
+  
+[Download Github](https://desktop.github.com/download/) en installeer de app op je Mac of PC en login met je 
+Github account.  
+
+Selecteer de *dal-documentation*-repo - zie plaatje. 
+
+Je repro is aangemaakt!
+
+[<img src="/assets/meta/03-select-repo.jpg" width="500"/>]()
+
+<Callout type="warning">
+Let er op dat als je even niet ge-edit hebt, dat je eerst in de Guthub app de laatste versie van de documentatie binnenhaalt!
+Dat doe je door bovenaan op Fetch te klikken!
+[<img src="/assets/meta/08-fetch.jpg" width="500"/>]()
+<callout>
+
+# Plaatjes toevoegen aan assets
+
+Plaatjes zoals screendumps zijn nu heel eenvoudig toe te voegen aan de repro. Bewerk ze eerst in Photshop. Houd daarbij
+een maximale breedte van 1200-1600 pixels aan, en bewaar het in qualeit 70-80.  
+Als je tevreden bent kopieer je ze in de Finder - Verkenner naar de public - assets directory!
+
+[<img src="/assets/meta/05-files.jpg" width="500"/>]()
+
+# Document editten in Visual Studio Code   
+
+Voor het editten van de files open je Visual Studio Code en kies je de directory,   
+meestal Documents - Github - dal-documentation.
+
+[<img src="/assets/meta/04-github-folder" width="500"/>]()
+
+Vervolgens ga je de documenten editten. Als je een nieuw document wilt toevoegen, geef deze dan de extensie .mdx.
+
+<callout type="info">
+Vergeet niet de _meta.json aan te passen of toe te voegen als dat nodig is!
+<callout>
+
+# Wijzigingen doorvoeren!
+
+Als je klaar bent met editten, of je wilt het terugzien op [docs.digitalartlab.nl](https://docs.digitalartlab.nl), 
+open dan de Github app. Je ziet een reeks wijzgingen die je uitgevoerd hebt.  
