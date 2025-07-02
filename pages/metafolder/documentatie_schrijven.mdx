@@ -8,7 +8,7 @@ Het schrijven in markdown vind je in [markdown](https://docs.digitalartlab.nl/me
 Het werken in Github vind je in [github](https://docs.digitalartlab.nl/metafolder/github)
 </Callout>
 
-## Werking Github \-\-\> docs.digitalartklab.nl
+## Werking Github \-\> docs.digitalartklab.nl
 Op de server staat een script die automatisch de github directory van **dal-documentation* scant voor wijzigingen. Dit geld voor nieuwe folders en files,
 en voor wijzigingen in de aanwezige files.  
 Je gebruikt Visual Studio Code \(zie [github](https://docs.digitalartlab.nl/metafolder/github)\) om een folder of file toe te voegen. 
@@ -41,8 +41,37 @@ bepalen moet je die dus opnemen in de meta-file!
 De folderstructuur is erg belangrijk. 
 
 Als je ingelogd bent met [github](https://docs.digitalartlab.nl/metafolder/github) vind je 
-de folder **pages** en **public**. In **pages** vind je de directories en pagina's die automatisch uitgelezen worden. En in **pages** staan 
-
+de folder **pages** en **public**. In **pages** vind je de directories en pagina's die automatisch uitgelezen worden. En in **pages** staan fotos en andere
+documenten die je wilt embedden in de pagina's. 
 
 [<img src="/assets/meta/02-ghdocs-folders.jpg" width="500"/>]()
+
+Ook de hoofd directory van **pages** heeft eem _meta.json file. Het is de bedoeling als je een directory aanmaakt voor een nieuwe toevoeging 
+aan de handleidingen, je deze in Visual Studio Code ook toevoegd aan de main _meta.json-file!  
+
+~~~
+{
+  "index": "Introductie",
+  "website": {
+    "href": "https://digitalartlab.nl",
+    "title": "digitalartlab.nl ↗",
+    "type": "page"
+  },
+  "-- Technieken --": {
+    "type": "separator",
+    "title": "Technieken"
+  },
+  "3d-printen": "3D printen",
+  "3d-scanner": "3D scanner",
+  "cnc-frezen": "CNC frezen",
+  "hot-press": "Hot press",
+  "lasersnijden": "Lasersnijden",
+  "vinyl-snijden": "Vinyl snijden",
+  "vr-bril": "VR-bril",
+  "-- Meta --": {
+    "type": "separator"
+  },
+  "metafolder": "Meta"
+}
+~~~
 
