@@ -8,11 +8,33 @@ Het schrijven in markdown vind je in [markdown](https://docs.digitalartlab.nl/me
 Het werken in Github vind je in [github](https://docs.digitalartlab.nl/metafolder/github)
 </Callout>
 
-## Werking Github naar docs.digitalartklab.nl
-Op de server staat een script die automatisch de github directory van *dal-documentation* scant voor wijzigingen. Dit geld voor nieuwe folders en files,
+## Werking Github \-\-\> docs.digitalartklab.nl
+Op de server staat een script die automatisch de github directory van **dal-documentation* scant voor wijzigingen. Dit geld voor nieuwe folders en files,
 en voor wijzigingen in de aanwezige files.  
 Je gebruikt Visual Studio Code \(zie [github](https://docs.digitalartlab.nl/metafolder/github)\) om een folder of file toe te voegen. 
 Bij een file gebruik je .mdx als extentie!
+
+In de meeste folders staat een **_meta.json** file. Daarin kan je aangeven wat je voorkeuren zijn voor de volgorde en benaming van de files in die folder.  
+Zoals bijvoorbeeld voor de listing van Meta, die vastgelegd staat in de **_meta.json** in de folder **metafolder**. 
+
+~~~
+{
+  "documentatie_schrijven": "Documentatie Schrijven",
+  "markdown": "Schrijven in markdown",
+  "github": "Github gebruiken"
+}
+~~~
+
+Per regel zie je eerst de filenaam zonder de extensie \(!\). En vervolgens de titel zoals je wilt dat die in de menulijst komt. 
+Vergeet niet een comma achter elke regel te plaatsen, behalve de laatste.  
+De file files.mdx is niet opgenomen in de meta-file, maar deze bestaat wel en wordt automatisch toegveoegd onderaan aan de lijst van deze folder.  
+<Callout type="info">
+Je ziet vaak alleen één regel, voor stappenplan.mdx. Dat is omdat deze boevenaan moet komen. Als je de volgorde van de andere files ook wilt
+bepalen moet je die dus opnemen in de metya-file!
+</Callout>
+
+
+
 
 ## Folder Structuur
 
