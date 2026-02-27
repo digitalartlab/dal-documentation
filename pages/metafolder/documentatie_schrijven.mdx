@@ -75,7 +75,7 @@ aan de handleidingen, je deze in Visual Studio Code ook toevoegd aan de main _me
 }
 ~~~
 
-## De source downloaden met Github
+## De source inladen naar Visual Studio Code
 
 Je kunt de documenten online in de github web-omgeving editten, maar door de Github-app te gebruiken voorkom je dat 
 je per wijzigingen eerst verificatie moet vragen aan een andere gebruiker met de juiste rechten.  
@@ -83,19 +83,19 @@ je per wijzigingen eerst verificatie moet vragen aan een andere gebruiker met de
 [Download Github](https://desktop.github.com/download/) en installeer de app op je Mac of PC en login met je 
 Github account.  
 
-Selecteer *digitalartlab\/dal-documentation* en klik vervolgens op *clone digitalartlab\/dal-documentation*.  
-De repro wordt nu naar jouw computer gekopieerd.
+Installeer in VS code de "Github Repositories" extension.
+Log hierna in op je github account door de stappen van "set-up" te volgen uit de extension description.
+
+<Callout type="info">
+Hiermee kan je online werken zonder telkens te hoeven dowloaden zoals meer gebruikelijk is in oude manieren van werken met Github.
+Nadeel is dat je alleen online kan editten, maarja, wij zijn toch nooit offline ;)
+[<img src="/assets/meta/24-gitrep-extension.jpg" width="350"/>]()
+</Callout>
+
+Selecteer *digitalartlab\/dal-documentation*
 
 [<img src="/assets/meta/03-select-repo.jpg" width="500"/>]()
 
-<Callout type="warning">
-Let er op dat als je even niet geëdit hebt, dat je eerst in de Github app de laatste versie van de documentatie binnenhaalt!
-Dat doe je door bovenaan op Fetch te klikken, en daarna op Pull.
-[<img src="/assets/meta/08-fetch.jpg" width="500"/>]()
-</Callout>
-
-<Callout type="warning">
-Een alternatief hiervoor is het gebruiken van de "Github Repositories" extension, hiermee hoef je niet telkens de source te downloaden maar kan je wel alleen editten als je online bent.
 </Callout>
 
 
@@ -103,8 +103,6 @@ Een alternatief hiervoor is het gebruiken van de "Github Repositories" extension
 
 Voor het editten van de files open je Visual Studio Code en kies je de directory,
 meestal Documents\/Github\/dal-documentation.
-
-[<img src="/assets/meta/04-github-folder.jpg" width="500"/>]()
 
 Vervolgens ga je de documenten editten. Als je een nieuw document wilt toevoegen, geef deze dan de extensie .mdx.
 
@@ -119,17 +117,20 @@ Vergeet niet de _meta.json aan te passen of toe te voegen als dat nodig is.
 
 Plaatjes zoals screendumps zijn nu heel eenvoudig toe te voegen aan de repro. Bewerk ze eerst in Photshop. Houd daarbij
 een maximale breedte van 1200-1600 pixels aan, en bewaar het in kwaliteit 70-80.  
-Als je tevreden bent kopieer je ze in de Finder of Verkenner naar de public\/assets directory.  
+Als je tevreden bent sleep je de file in VS Code naar de public\/assets directory.  
 Hoe je ze in de tekst embed staat uitgelegd in de [markdown](https://docs.digitalartlab.nl/metafolder/markdown) handleiding.  
 
-[<img src="/assets/meta/05-files.jpg" width="500"/>]()
+[<img src="25-asset-folder-example.jpg" width="500"/>]()
 
 
 ## Wijzigingen doorvoeren
 
-Sla regelmatig op en ga dan steeds naar de Github app. Je ziet een reeks wijzgingen die je uitgevoerd hebt.
-Kies *Commit* en daarna *Push Origin*. Als je meerdere documenten wijzigt moet je een omschrijving meegeven 
-in de velden boven Commit.
+Sla regelmatig op, achter filenames komen letters te staan op basis van de verandering.
+<Callout type="info">
+"A" is een nieuwe "Asset" en "M" is een nieuwe "Modification".
+</Callout>
+
+Open het *Source Control* menu, type een korte uitleg van je wijzigingen en daarna *Commit & Push*.
 
 Het script op de server haalt eens in de paar minuut de data op van Github. Kijk daarom na ongeveer na een minuut 
 of de wijzigingen doorkomen op [docs.digitalartlab.nl](https://docs.digitalartlab.nl). 
